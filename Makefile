@@ -11,6 +11,6 @@ nothing.o: nothing.c
 	$(CC) $(CFLAGS) -c nothing.c
 
 clean:
-rm -f *.o $(TARGET)
+	rm -f *.o $(TARGET)
 
 .PHONY: all clean
