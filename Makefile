@@ -1,5 +1,5 @@
 CC =gcc
-CFLAGS = -Wall -Wextra -02
+CFLAGS = -Wall -Wextra -O2
 TARGET = nothing
 
 all: $(TARGET)
