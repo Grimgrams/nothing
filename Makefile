@@ -5,7 +5,7 @@ TARGET = nothing
 all: $(TARGET)
 
 $(TARGET): nothing.o
-$(CC) $(CFLAGS) -o $(TARGET) nothing.o
+	$(CC) $(CFLAGS) -o $(TARGET) nothing.o
 
 nothing.o: nothing.c
 	$(CC) $(CFLAGS) -c nothing.c
