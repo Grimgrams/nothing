@@ -1,16 +1,25 @@
-CC =gcc
+CC = gcc
 CFLAGS = -Wall -Wextra -O2
+LDFLAGS = -L$(PWD) -lnothingx
+INCLUDES = -I$(PWD)
 TARGET = nothing
+LIB = libnothingx.a
 
-all: $(TARGET)
+all: $(LIB) $(TARGET)
+
+$(LIB): nothingx.o
+	ar rcs $(LIB) nothingx.o
+
+nothingx.o: nothingx.c nothingx.h
+	$(CC) $(CFLAGS) -c nothingx.c
 
 $(TARGET): nothing.o
-	$(CC) $(CFLAGS) -o $(TARGET) nothing.o
+	 $(CC) $(CFLAGS) -o $(TARGET) nothing.o $(LDFLAGS)
 
-nothing.o: nothing.c
-	$(CC) $(CFLAGS) -c nothing.c
+nothing.o: nothing.c nothingx.h
+	$(CC) $(CFLAGS) $(INCLUDES) -c nothing.c
 
 clean:
-	rm -f *.o $(TARGET)
+	rm -f *.o $(TARGET) $(LIB)
 
 .PHONY: all clean
