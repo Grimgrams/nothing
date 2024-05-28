@@ -3,10 +3,6 @@
 
 typedef void _nothing;
 
-/*
-@param nothingx
-does nothing
-*/
 _nothing nothing(const char nothingx);
 
 _nothing nothing_char(char **char_nothing);
