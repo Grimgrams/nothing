@@ -19,6 +19,11 @@ $(TARGET): nothing.o
 nothing.o: nothing.c nothingx.h
 	$(CC) $(CFLAGS) $(INCLUDES) -c nothing.c
 
+install:
+	mv $(LIB) /usr/local/lib/
+	mkdir /usr/local/include/nothingx
+	mv nothingx.h nothingx.c /usr/local/include/nothingx/
+
 clean:
 	rm -f *.o $(TARGET) $(LIB)
 
