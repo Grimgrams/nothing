@@ -1,10 +1,28 @@
-#ifndef _NOTHINGX_H
-#define _NOTHINGX_H
+/**
+* @file nothingx.h
+* @author Julian Pitterson <julianpitterson@gmail.com>
+*/
 
-typedef void _nothing;
+#ifndef NOTHINGX_H
+#define NOTHINGX_H
 
-_nothing nothing(const char nothingx);
+#define __NOTHING_MAX
+#define __NOTHING_MIN
 
-_nothing nothing_char(char **char_nothing);
+typedef void _nothingv;
+typedef int _nothingi;
+typedef char _nothingc;
 
-#endif //_NOTHINGX_H
+typedef struct{
+    _nothingi ngtype_i;
+    _nothingc ngtype_c;
+} _n_group;
+
+
+_nothingv nothing(const char nothingx);
+
+_nothingv nothing_char(char *char_nothing);
+
+_nothingi get_value(int val, ...);
+
+#endif //NOTHINGX_H
