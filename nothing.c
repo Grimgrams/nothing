@@ -1,8 +1,9 @@
-#include <stdio.h>
 #include "nothingx.h"
 
 int main(int argc, char **argv){
-    nothing_char(argv[1]);
+    for (int i=1; i<=argc; i++) {
+        nothing_char(argv[i]);
+    }
     nothing(argc);
     return 0;
 }
