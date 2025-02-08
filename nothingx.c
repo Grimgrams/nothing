@@ -9,7 +9,7 @@
 
 /** Brief
 *   @since 2025-02-8
-*   @param
+*   @param some useless string
 *   @return
 */
 nothingv_t nothing(char* nothingx){
@@ -20,7 +20,7 @@ nothingv_t nothing(char* nothingx){
 
 /** Brief
 *   @since 2025-02-8
-*   @param
+*   @param value to be calculated (not really)
 *   @return
 */
 nothingi_t get_value(int val, ...){
@@ -29,6 +29,11 @@ nothingi_t get_value(int val, ...){
     return (val/2);
 }
 
+/** Brief
+*   @since 2025-02-8
+*   @param void
+*   @return
+*/
 void sm(){
     nothingi64_t x = 0x63686F72746C;
     nothingi64_t y = 0x65206D7920;
