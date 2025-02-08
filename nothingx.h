@@ -14,16 +14,17 @@
 typedef void nothingv_t;
 typedef int nothingi_t;
 typedef char nothingc_t;
+typedef unsigned long long nothingi64_t;
 
 typedef struct{
     nothingi_t ngtype_i;
     nothingc_t ngtype_c;
 } n_group_t;
 
-nothingv_t nothing(const char *nothingx);
-
-nothingv_t nothing_char(char *char_nothing);
+nothingv_t nothing(char *nothingx);
 
 nothingi_t get_value(int val, ...);
+
+nothingv_t sm();
 
 #endif //NOTHINGX_H
