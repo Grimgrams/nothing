@@ -1,9 +1,15 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -O2
 LDFLAGS = -L$(PWD) -lnothingx
+
+PREFIX ?= /usr/local
+LIBDIR = $(PREFIX)/lib
+INCLUDEDIR = $(PREFIX)/include/nothingx
+
 INCLUDES = -I$(PWD)
 TARGET = nothing
 LIB = libnothingx.a
+
 
 all: $(LIB) $(TARGET)
 
@@ -20,9 +26,12 @@ nothing.o: nothing.c nothingx.h
 	$(CC) $(CFLAGS) $(INCLUDES) -c nothing.c
 
 install:
-	cp $(LIB) /usr/local/lib/
-	mkdir /usr/local/include/nothingx
-	cp nothingx.h nothingx.c /usr/local/include/nothingx/
+	install -d $(DESTDIR)$(LIBDIR)
+	install -d $(DESTDIR)$(INCLUDEDIR)
+
+	install -m 755 $(LIB) $(DESTDIR)$(LIBDIR)
+	install -m 644 nothingx.h nothingx.c $(DESTDIR)$(INCLUDEDIR)
+
 
 clean:
 	rm -f *.o $(TARGET) $(LIB)
